@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>keycode</title>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Codystar:wght@300;400&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link  rel="stylesheet" href="css/codes.css">
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+    <body>
+       <section>
+        <div class="container">
+            <div class="title">
+                <h2 class="typewriter">
+                    <span>Press Any Key</span><br>
+                    <span>On Keyboard</span>
+                  </h2>
+                  
+                <h3><span>To get key code</span></h3>
+            </div>
+        
+        <div class="code-container">
+            <h3 class="code"></h3>
+            <div class="key"></div>
+        </div>
+    </div>
+    </section> 
+    </body>
+    <script>
+      const lines = ["Press Any Key", "On Keyboard"];
+      const el = document.querySelector(".typewriter");
+      el.innerHTML = "<span></span><br><span></span>";
+      const spans = el.querySelectorAll("span");
+    
+      let lineIndex = 0;
+      let charIndex = 0;
+    
+      function typeLine() {
+        // Remove cursor from all spans
+        spans.forEach(span => span.classList.remove("cursor"));
+    
+        if (lineIndex < lines.length) {
+          // Add cursor to the currently active line
+          spans[lineIndex].classList.add("cursor");
+    
+          if (charIndex < lines[lineIndex].length) {
+            spans[lineIndex].textContent += lines[lineIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeLine, 100);
+          } else {
+            charIndex = 0;
+            lineIndex++;
+            setTimeout(typeLine, 300);
+          }
+        }
+      }
+    
+      window.addEventListener("DOMContentLoaded", typeLine);
+    </script>
+     
+</html>
