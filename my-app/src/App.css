@@ -1,0 +1,121 @@
+html,css{
+  height: 100%;
+  margin: 0;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;  
+  background-color: #b80000;
+  background-image: radial-gradient(circle, #b80000 14%, #ffa4dc 77%);  background-repeat: no-repeat; /* Prevent the background from repeating */
+  background-position: center; 
+}
+.App{
+  height: 100%;
+  margin: 0;
+  margin-top: 160px;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  background: #f4f4f4;
+  align-content: stretch;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+
+}
+
+.timer-container{
+  box-sizing: border-box;
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background-color: rgba(255, 186, 229, 0.911);
+  box-shadow: 0 0 40px 10px rgb(255, 126, 180);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.timer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-display, .timer-input {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  background: transparent;
+  color: #b80000;
+  font-weight: bold;
+  border: none;
+  padding-top: 130px;
+  outline: none;
+}
+
+.timer-input {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  background: transparent;
+  color: #b80000;
+  cursor:text;
+  font-weight: bold;
+  font-weight: normal; 
+  border: none;
+  padding-top: 130px;
+  outline: none;
+  
+}
+.timer-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* Starts the stroke from the top */
+}
+
+.timer-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(90deg);
+}
+
+.circle-background {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 10;
+}
+
+.circle-timer {
+  fill: none;
+  stroke: #ff6347; /* Red color for the countdown */
+  stroke-width: 10;
+  stroke-dasharray: 628; /* 2πr (circumference of a circle) for 100px radius */
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.bottom-buttons{
+  position:absolute;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  height: 80px;
+  background: #ffd4f1;
+  display:flex;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 0 5px hsla(323, 100%, 50%, 0.2);
+  z-index: 9;
+}
+button{
+    background-color: #ffd4f1;
+    padding: 10px;
+    box-shadow: 0 0 6px hsla(323, 100%, 27%, 0.2);
+    border-radius: 20px;
+    border: #b80000;
+    font-size: 15px;
+    color:#b80000;
+}
+button:hover{
+  background-image: radial-gradient(circle, #b80000 18%, #ffa4dc 77%);  background-repeat: no-repeat; /* Prevent the background from repeating */
+  color: #ffd4f1;
+}
