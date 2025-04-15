@@ -1,0 +1,3 @@
+[submodule "sushicourse"]
+	path = sushicourse
+	url = https://github.com/marijaT13/sushicourse
